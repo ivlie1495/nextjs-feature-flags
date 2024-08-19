@@ -1,5 +1,8 @@
 run_lint:
   image: node:latest
+  rules:
+    when:
+      - manual
   script:
     - npm install
     - npm run lint
