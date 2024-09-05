@@ -1,9 +1,14 @@
-run_lint:
-  image: node:latest
-  rules:
-    - if: '$CI_PIPELINE_SOURCE == "push"'
-      when: never # Prevent pipeline run for push event
-    - when: always # Run pipeline for all other cases
+stages:
+  - build
+
+pages:
+  stage: build
   script:
     - npm install
-    - npm run lint
+    - npm run build
+  artifacts:
+    paths:
+      - out
+  publish: out
+  only:
+    - main
