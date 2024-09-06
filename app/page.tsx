@@ -1,3 +1,5 @@
 export default function Home() {
-  return <main>Test</main>
+  return (
+    <main className="flex h-full justify-center items-center">Center Text</main>
+  )
 }
