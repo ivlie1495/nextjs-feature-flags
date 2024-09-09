@@ -27,9 +27,7 @@ const Content = ({ user }: Props) => {
   return (
     <>
       <div>Your email: {user.email}</div>
-      {!isLoading && (
-        <div>{isFeatureEnabled ? 'Test Satu Dua Tiga' : 'Abcd'}</div>
-      )}
+      {!isLoading && <div>{isFeatureEnabled ? 'New Feature' : 'Abcd'}</div>}
     </>
   )
 }
