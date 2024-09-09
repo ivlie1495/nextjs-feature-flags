@@ -16,3 +16,5 @@ export const GET = async () => {
 
   return NextResponse.redirect('/')
 }
+
+export const dynamic = 'force-dynamic'
