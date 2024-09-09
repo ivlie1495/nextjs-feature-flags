@@ -6,6 +6,7 @@ import posthogClient from '@/utils/posthog'
 export const GET = async () => {
   const { getUser } = getKindeServerSession()
   const user = await getUser()
+  console.log(user)
 
   posthogClient.identify({
     distinctId: user.id,
@@ -14,7 +15,7 @@ export const GET = async () => {
     },
   })
 
-  return NextResponse.redirect('/')
+  return NextResponse.redirect(`${process.env.KINDE_SITE_URL}/`)
 }
 
 export const dynamic = 'force-dynamic'
